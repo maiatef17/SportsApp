@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="xGN-fo-dTq" customClass="LeagueCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xGN-fo-dTq" id="wYg-8Z-8QK">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DzC-nb-D5I">
+                        <rect key="frame" x="2" y="2" width="316" height="55"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="league" translatesAutoresizingMaskIntoConstraints="NO" id="P51-X6-ikA">
+                                <rect key="frame" x="8" y="0.0" width="60" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="4YG-mg-sHc"/>
+                                    <constraint firstAttribute="width" constant="60" id="cCu-xj-DVA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P51-X6-ikA" firstAttribute="centerY" secondItem="DzC-nb-D5I" secondAttribute="centerY" id="ViZ-mh-xlJ"/>
+                            <constraint firstAttribute="leading" secondItem="P51-X6-ikA" secondAttribute="trailing" constant="-68" id="Zti-y4-bha"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9l-fa-lrf">
+                        <rect key="frame" x="89" y="-39" width="48" height="137"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="V9l-fa-lrf" firstAttribute="centerY" secondItem="DzC-nb-D5I" secondAttribute="centerY" id="5A7-Jy-g1f"/>
+                    <constraint firstItem="V9l-fa-lrf" firstAttribute="leading" secondItem="wYg-8Z-8QK" secondAttribute="leadingMargin" constant="73" id="FLh-Wv-XL4"/>
+                    <constraint firstItem="V9l-fa-lrf" firstAttribute="top" secondItem="wYg-8Z-8QK" secondAttribute="topMargin" constant="-51" id="Ka6-LX-1Ak"/>
+                    <constraint firstAttribute="trailing" secondItem="DzC-nb-D5I" secondAttribute="trailing" constant="2" id="TI0-fr-Nas"/>
+                    <constraint firstItem="DzC-nb-D5I" firstAttribute="leading" secondItem="wYg-8Z-8QK" secondAttribute="leading" constant="2" id="UQV-Fc-yxc"/>
+                    <constraint firstItem="DzC-nb-D5I" firstAttribute="top" secondItem="wYg-8Z-8QK" secondAttribute="top" constant="2" id="jhr-tw-V9u"/>
+                    <constraint firstAttribute="bottom" secondItem="DzC-nb-D5I" secondAttribute="bottom" constant="2" id="xuV-WC-9pn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="Mia-Xs-ngp"/>
+            <connections>
+                <outlet property="leagueImage" destination="P51-X6-ikA" id="5W4-MY-Kjd"/>
+                <outlet property="leagueName" destination="V9l-fa-lrf" id="1kN-B1-Wud"/>
+                <outlet property="leagueView" destination="DzC-nb-D5I" id="CqP-Re-P0j"/>
+            </connections>
+            <point key="canvasLocation" x="129.7709923664122" y="-2.4647887323943665"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="league" width="177" height="166.5"/>
+    </resources>
+</document>
