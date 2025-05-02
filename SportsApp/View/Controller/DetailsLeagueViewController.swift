@@ -145,7 +145,7 @@ class DetailsLeagueViewController: UIViewController, UICollectionViewDataSource,
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 5, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0)
         ////
         section.visibleItemsInvalidationHandler = { (items, offset, environment) in
                let containerWidth = environment.container.contentSize.width

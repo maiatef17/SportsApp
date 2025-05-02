@@ -52,11 +52,19 @@ class Services: NetworkProtocol {
     
     func fetchComingData(sport: String,leagueId: Int ,completionHandler: @escaping ([Fixtures]?) -> Void) {
         
-        guard let url = URL(string: "https://apiv2.allsportsapi.com/\(sport)/?met=Fixtures&APIkey=\(APIkey)&leagueId=\(leagueId)&from=2025-02-5&to=2025-02-20") else {
-            
-            completionHandler(nil)
-            return
-        }
+        let today = Date()
+           let from = today
+           let to = Calendar.current.date(byAdding: .day, value: 30, to: today)!
+
+        DateFormatter().dateFormat = "yyyy-MM-dd"
+
+        let fromString = DateFormatter().string(from: from)
+        let toString = DateFormatter().string(from: to)
+        
+           guard let url = URL(string: "https://apiv2.allsportsapi.com/\(sport)/?met=Fixtures&APIkey=\(APIkey)&leagueId=\(leagueId)&from=\(fromString)&to=\(toString)") else {
+               completionHandler(nil)
+               return
+           }
         
         let request = URLRequest(url: url)
         let session = URLSession(configuration: .default)
@@ -82,10 +90,20 @@ class Services: NetworkProtocol {
     
     func fetchLatestData(sport: String,leagueId: Int ,completionHandler: @escaping ([Fixtures]?) -> Void) {
         
-        guard let url = URL(string: "https://apiv2.allsportsapi.com/\(sport)/?met=Fixtures&APIkey=\(APIkey)&leagueId=\(leagueId)&from=2025-01-1&to=2025-02-3") else {
-            completionHandler(nil)
-            return
-        }
+          let today = Date()
+            let from = Calendar.current.date(byAdding: .day, value: -30, to: today)!
+            let to = Calendar.current.date(byAdding: .day, value: -1, to: today)!
+
+       
+        DateFormatter().dateFormat = "yyyy-MM-dd"
+
+            let fromString = DateFormatter().string(from: from)
+            let toString = DateFormatter().string(from: to)
+
+            guard let url = URL(string: "https://apiv2.allsportsapi.com/\(sport)/?met=Fixtures&APIkey=\(APIkey)&leagueId=\(leagueId)&from=\(fromString)&to=\(toString)") else {
+                completionHandler(nil)
+                return
+            }
         
         let request = URLRequest(url: url)
         let session = URLSession(configuration: .default)

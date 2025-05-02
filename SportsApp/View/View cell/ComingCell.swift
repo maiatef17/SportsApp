@@ -26,6 +26,7 @@ class ComingCell: UICollectionViewCell {
         
         Border.layer.borderColor = UIColor.lightGray.cgColor
         Border.layer.borderWidth = 0.5
+        
 
     }
 
