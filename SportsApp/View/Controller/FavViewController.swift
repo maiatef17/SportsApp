@@ -52,9 +52,27 @@ class FavViewController: UIViewController , UITableViewDelegate, UITableViewData
         fetchFavorites()
         favTable.reloadData()
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchFavorites()
+        
+        if favoriteLeagues.count == 0 {
+            self.addBackgroundImage(named: "noFavorites")
+        } else {
+            self.removeBackgroundImage()
+        }
+    }
+
+    func addBackgroundImage(named imageName: String) {
+        let backgroundImage = UIImageView(frame: self.favTable.bounds)
+        backgroundImage.image = UIImage(named: imageName)
+        backgroundImage.contentMode = .scaleAspectFit
+        self.favTable.backgroundView = backgroundImage
+    }
+
+    func removeBackgroundImage() {
+        self.favTable.backgroundView = nil
     }
 
     
